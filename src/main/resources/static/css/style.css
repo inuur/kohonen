@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+canvas {
+    background-color: pink;
+    /*height: 500px;*/
+    /*width: 500px;*/
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    padding: 0;
+    margin: 0;
+}
+
+tr {
+    padding: 0;
+    margin: 0;
+}
