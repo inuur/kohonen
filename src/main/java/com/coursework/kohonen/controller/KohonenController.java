@@ -1,28 +1,25 @@
 package com.coursework.kohonen.controller;
 
-import com.coursework.kohonen.service.KohonenService;
-import com.coursework.kohonen.util.Node;
+import com.coursework.kohonen.util.kohonen.KohonenMap;
+import com.coursework.kohonen.util.kohonen.MapNode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/map")
 public class KohonenController {
 
-    final KohonenService kohonenService;
-
-    public KohonenController(KohonenService kohonenService) {
-        this.kohonenService = kohonenService;
-    }
 
     @GetMapping
-    public Node[] map() {
-        return kohonenService.getNodes();
+    public List<MapNode> map() {
+        return KohonenMap.mapNodes;
     }
 
     @GetMapping("/iteration")
     public int iteration() {
-        return kohonenService.getIteration();
+        return KohonenMap.currentIteration;
     }
 }
