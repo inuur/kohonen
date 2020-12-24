@@ -21,3 +21,7 @@ tr {
     padding: 0;
     margin: 0;
 }
+
+#info-table td {
+    color: black !important;
+}

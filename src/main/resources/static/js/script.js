@@ -8,23 +8,27 @@ $(document).ready(function () {
                 for (let j = 0; j < Math.sqrt(data.length); j++) {
                     let rgb = 'rgb(' + Math.floor(data[i * Math.sqrt(data.length) + j].weights[0] * 10) + ',' + Math.floor(data[i * Math.sqrt(data.length) + j].weights[1] * 10) + ',' + Math.floor(data[i * Math.sqrt(data.length) + j].weights[2] * 10) + ")"
                     map.rows[i].cells[j].style.backgroundColor = rgb;
-                    map.rows[i].cells[j].textContent = data[i * Math.sqrt(data.length) + j].numOfSamples;
+                    map.rows[i].cells[j].textContent = data[i * Math.sqrt(data.length) + j].numOfSamples === 0 ? "" : data[i * Math.sqrt(data.length) + j].numOfSamples;
                     map.rows[i].cells[j].onmouseenter = function () {
                         mapNode = data[i * Math.sqrt(data.length) + j];
-                        $("#weights").text(mapNode.weights)
-                        $("#k1").find(".value").text(mapNode.kmeansCounter[1])
-                        $("#k2").find(".value").text(mapNode.kmeansCounter[2])
-                        $("#k3").find(".value").text(mapNode.kmeansCounter[3])
-                        $("#k4").find(".value").text(mapNode.kmeansCounter[4])
-                        $("#k5").find(".value").text(mapNode.kmeansCounter[5])
+                        $("#w1").text("" + mapNode.weights[0])
+                        $("#w2").text("" + mapNode.weights[1])
+                        $("#w3").text("" + mapNode.weights[2])
 
-                        $("#k1").find(".percent").text(getPercent(mapNode.kmeansCounter, 1).toFixed(2))
-                        $("#k2").find(".percent").text(getPercent(mapNode.kmeansCounter, 2).toFixed(2))
-                        $("#k3").find(".percent").text(getPercent(mapNode.kmeansCounter, 3).toFixed(2))
-                        $("#k4").find(".percent").text(getPercent(mapNode.kmeansCounter, 4).toFixed(2))
-                        $("#k5").find(".percent").text(getPercent(mapNode.kmeansCounter, 5).toFixed(2))
+                        $("#c1").text("" + mapNode.kmeansCounter[1])
+                        $("#c2").text("" + mapNode.kmeansCounter[2])
+                        $("#c3").text("" + mapNode.kmeansCounter[3])
+                        $("#c4").text("" + mapNode.kmeansCounter[4])
+                        $("#c5").text("" + mapNode.kmeansCounter[5])
 
-                        $("#global_percent").text("Total: " + (getSum(mapNode.kmeansCounter) / 82000 * 100).toFixed(2) + "%")
+                        $("#c1p").text("" + getPercent(mapNode.kmeansCounter, 1).toFixed(2) + "%")
+                        $("#c2p").text("" + getPercent(mapNode.kmeansCounter, 2).toFixed(2) + "%")
+                        $("#c3p").text("" + getPercent(mapNode.kmeansCounter, 3).toFixed(2) + "%")
+                        $("#c4p").text("" + getPercent(mapNode.kmeansCounter, 4).toFixed(2) + "%")
+                        $("#c5p").text("" + getPercent(mapNode.kmeansCounter, 5).toFixed(2) + "%")
+
+                        $("#tpp").text("" + (getSum(mapNode.kmeansCounter) / 82000 * 100).toFixed(2) + "%")
+                        $("#tp").text("" + getSum(mapNode.kmeansCounter))
                     }
                 }
             }

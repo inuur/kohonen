@@ -13,12 +13,6 @@ public class LearnDataReader {
     private static final String FILE_PATH = "C:\\Users\\lolip\\Desktop\\HS Projects\\kohonen\\src\\main\\resources\\vk_pers4.csv";
     private static int TOTAL_DATA_LENGTH = 0;
 
-    private final DataNormalizer dataNormalizer;
-
-    public LearnDataReader(DataNormalizer dataNormalizer) {
-        this.dataNormalizer = dataNormalizer;
-    }
-
     public List<SampleNode> readData() {
 
         List<SampleNode> data = new ArrayList<>(DATA_LENGTH);
@@ -37,7 +31,6 @@ public class LearnDataReader {
             double[] elements = Arrays.stream(strElements)
                 .mapToDouble(Double::parseDouble)
                 .toArray();
-            dataNormalizer.analyze(elements);
             SampleNode sampleNode = new SampleNode(elements);
             data.add(sampleNode);
         }

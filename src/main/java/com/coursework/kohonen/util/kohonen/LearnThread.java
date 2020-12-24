@@ -28,10 +28,14 @@ public class LearnThread extends Thread {
             for (MapNode mapNode : mapNodes) {
                 double rho = mapNode.rho(closestNode);
                 double coefficient = alpha(stage) * h(stage, rho);
-                mapNode.weights[0] += coefficient * (sampleNodes.get(i).weights[0] - mapNode.weights[0]);
-                mapNode.weights[1] += coefficient * (sampleNodes.get(i).weights[1] - mapNode.weights[1]);
-                mapNode.weights[2] += coefficient * (sampleNodes.get(i).weights[2] - mapNode.weights[2]);
+                synchronized (mapNode) {
+                    mapNode.weights[0] += coefficient * (sampleNodes.get(i).weights[0] - mapNode.weights[0]);
+                    mapNode.weights[1] += coefficient * (sampleNodes.get(i).weights[1] - mapNode.weights[1]);
+                    mapNode.weights[2] += coefficient * (sampleNodes.get(i).weights[2] - mapNode.weights[2]);
+                }
             }
         }
     }
 }
+
+

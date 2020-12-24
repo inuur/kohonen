@@ -14,7 +14,7 @@ public class MapNode extends BaseNode implements Serializable {
 
     public int numOfSamples = 0;
 
-    public MapNode(int x, int y) {
+    public MapNode(int x, int y) { 
         this.x = x * 25;
         this.y = y * 25;
         weights[0] = random.nextInt(20);

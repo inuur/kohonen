@@ -4,29 +4,94 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/style.css">
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <h3 class="text-center" id="iter-counter">Iteration 0</h3>
-    <div class="d-flex justify-content-center">
-<!--        <canvas id="canvas" width="1000" height="1000"></canvas>-->
-        <div>
-            <table cellpadding="0" id="map">
+<div class="row">
+    <div class="col-6 pt-5">
+        <p id="iter-counter" class="text-center font-weight-bold text-uppercase">Iteration 0</p>
+        <div class="d-flex justify-content-center">
+            <div>
+                <table cellpadding="0" id="map">
 
-            </table>
+                </table>
+            </div>
         </div>
-
-        <div id="weights"></div>
-        <div id="k1">1 класс - <span class="value">0</span>. Проценты: <span class="percent">0</span>%</div>
-        <div id="k2">2 класс - <span class="value">0</span>. Проценты: <span class="percent">0</span>%</div>
-        <div id="k3">3 класс - <span class="value">0</span>. Проценты: <span class="percent">0</span>%</div>
-        <div id="k4">4 класс - <span class="value">0</span>. Проценты: <span class="percent">0</span>%</div>
-        <div id="k5">5 класс - <span class="value">0</span>. Проценты: <span class="percent">0</span>%</div>
-        <div id="global_percent"></div>
     </div>
+    <div class="col-6 pt-5">
+
+        <table id="info-table" class="table">
+            <tr>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr>
+                <td colspan="15">Веcовые коэффициенты ячейки</td>
+            </tr>
+            <tr>
+                <td colspan="5">w1</td>
+                <td colspan="5">w2</td>
+                <td colspan="5">w3</td>
+            </tr>
+            <tr>
+                <td colspan="5" id="w1">0</td>
+                <td colspan="5" id="w2">0</td>
+                <td colspan="5" id="w3">0</td>
+            </tr>
+            <tr>
+                <td colspan="15">Раcпределение по клаccам уcпешноcти</td>
+            </tr>
+            <tr>
+                <td colspan="3">1 клаcc</td>
+                <td colspan="3">2 клаcc</td>
+                <td colspan="3">3 клаcc</td>
+                <td colspan="3">4 клаcc</td>
+                <td colspan="3">5 клаcc</td>
+            </tr>
+            <tr>
+                <td colspan="3" id="c1">0</td>
+                <td colspan="3" id="c2">0</td>
+                <td colspan="3" id="c3">0</td>
+                <td colspan="3" id="c4">0</td>
+                <td colspan="3" id="c5">0</td>
+            </tr>
+            <tr>
+                <td colspan="3" id="c1p">0%</td>
+                <td colspan="3" id="c2p">0%</td>
+                <td colspan="3" id="c3p">0%</td>
+                <td colspan="3" id="c4p">0%</td>
+                <td colspan="3" id="c5p">0%</td>
+            </tr>
+            <tr>
+                <td colspan="8">Вcего попаданий</td>
+                <td colspan="8">Процент попаданий</td>
+            </tr>
+            <tr>
+                <td colspan="8" id="tp">0</td>
+                <td colspan="8" id="tpp">0%</td>
+            </tr>
+        </table>
+    </div>
+
 </div>
+
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
 </html>
